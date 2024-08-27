@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskdemo
-        image: medlas/jenkins-flask:{{ .Values.image.tag }}
+        image: medlas/jenkins-flask:DOCKER_IMAGE_TAG
         ports:
         - containerPort: 5000
         resources:
@@ -28,7 +28,7 @@ spec:
             memory: "256Mi"
       # Add this annotation to force Kubernetes to detect changes
       annotations:
-        kubernetes.io/change-cause: "Build number {{ .Values.buildNumber }}"
+        kubernetes.io/change-cause: "Build number BUILD_NUMBER"
 
 ---
 apiVersion: v1
