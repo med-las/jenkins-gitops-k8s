@@ -16,7 +16,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: medlas/jenkins-flask
+      - image: medlas/jenkins-flask:latest
         name: flaskdemo
         resources: {}
 status: {}
