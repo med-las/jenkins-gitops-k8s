@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskdemo
-        image: medlas/jenkins-flask:${IMAGE_TAG}
+        image: medlas/jenkins-flask:15
         ports:
         - containerPort: 5000
         resources:
@@ -26,6 +26,8 @@ spec:
           requests:
             cpu: "0.5"
             memory: "256Mi"
+
+
 ---
 apiVersion: v1
 kind: Service
