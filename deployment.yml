@@ -1,25 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: flaskdemo
   labels:
     app: flaskdemo
-  name: flaskdemo
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: flaskdemo
-  strategy: {}
   template:
     metadata:
       labels:
         app: flaskdemo
     spec:
       containers:
-      - image: medlas/jenkins-flask:latest
-        name: flaskdemo
-        resources: {}
-status: {}
+      - name: flaskdemo
+        image: medlas/jenkins-flask
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "1"
+            memory: "512Mi"
+          requests:
+            cpu: "0.5"
+            memory: "256Mi"
+
 
 ---
 apiVersion: v1
