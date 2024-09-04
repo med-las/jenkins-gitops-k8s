@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskdemo
-        image: medlas/jenkins-flask:20
+        image: medlas/jenkins-flask:21
         ports:
         - containerPort: 5000
         resources:
