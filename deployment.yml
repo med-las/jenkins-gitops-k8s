@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: odoo
-        image: medlas/odoo:${DOCKERTAG}
+        image: odoo:17
         ports:
         - containerPort: 8069
         env:
