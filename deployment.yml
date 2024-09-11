@@ -5,7 +5,7 @@ metadata:
   labels:
     app: odoo
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: odoo
@@ -63,14 +63,15 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:13
+        image: postgres:15
+        
         env:
-        - name: POSTGRES_DB
-          value: odoo
-        - name: POSTGRES_USER
+        - name: HOST
+          value: db
+        - name: USER
           value: odoo
         - name: POSTGRES_PASSWORD
-          value: odoo
+          value: intel_internship_ppwwwdd
         ports:
         - containerPort: 5432
         resources:
